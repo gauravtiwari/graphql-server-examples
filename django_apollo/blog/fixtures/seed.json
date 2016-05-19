@@ -1,0 +1,133 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "first_name": "Gaurav",
+      "last_name": "Tiwari",
+      "username": "gaurav",
+      "password": "123abc@",
+      "email": "gaurav@example.com"
+    }
+  },
+
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "username": "parul",
+      "password": "123abc@",
+      "email": "john@example.com"
+    }
+  },
+
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "first_name": "Margarett",
+      "last_name": "Daisy",
+      "username": "margie",
+      "password": "123abc@",
+      "email": "margie@example.com"
+    }
+  },
+
+  {
+    "model": "blog.post",
+    "pk": 1,
+    "fields": {
+      "title": "First post title",
+      "description": "First post body",
+      "published_date": "2016-05-19 08:14:39",
+      "user": 1
+    }
+  },
+
+  {
+    "model": "blog.post",
+    "pk": 2,
+    "fields": {
+      "title": "Second post title",
+      "description": "Second post body",
+      "published_date": "2016-05-19 08:14:39",
+      "user": 1
+    }
+  },
+
+  {
+    "model": "blog.post",
+    "pk": 3,
+    "fields": {
+      "title": "Third post title",
+      "description": "Third post body",
+      "published_date": "2016-05-19 08:14:39",
+      "user": 2
+    }
+  },
+
+  {
+    "model": "blog.post",
+    "pk": 4,
+    "fields": {
+      "title": "Fourth post title",
+      "description": "Fourth post body",
+      "published_date": "2016-05-19 08:14:39",
+      "user": 2
+    }
+  },
+
+  {
+    "model": "blog.post",
+    "pk": 5,
+    "fields": {
+      "title": "Fifth post title",
+      "description": "Fifth post body",
+      "published_date": "2016-05-19 08:14:39",
+      "user": 3
+    }
+  },
+
+  {
+    "model": "blog.post",
+    "pk": 6,
+    "fields": {
+      "title": "Sixth post title",
+      "description": "Sixth post body",
+      "published_date": "2016-05-19 08:14:39",
+      "user": 3
+    }
+  },
+
+  {
+    "model": "blog.comment",
+    "pk": 1,
+    "fields": {
+      "body": "this is comment for post 1",
+      "post": 1,
+      "user": 1
+    }
+  },
+
+  {
+    "model": "blog.comment",
+    "pk": 2,
+    "fields": {
+      "body": "this is comment for post 2",
+      "post": 2,
+      "user": 2
+    }
+  },
+
+  {
+    "model": "blog.comment",
+    "pk": 2,
+    "fields": {
+      "body": "this is comment for post 3",
+      "post": 3,
+      "user": 3
+    }
+  }
+]
