@@ -1,20 +1,20 @@
-"use strict";
-
+'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Comment = sequelize.define("Comment", {
-    body: DataTypes.STRING
+  var Comment = sequelize.define('Comment', {
+    body: DataTypes.TEXT,
+    post_id: DataTypes.INTEGER,
+    user_id: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
-        Comment.belongsTo(models.User, {
+        Comment.User = Comment.belongsTo(models.User, {
           onDelete: "CASCADE",
           foreignKey: {
             allowNull: false
           }
         });
-      },
-      associate: function(models) {
-        Comment.belongsTo(models.Post, {
+
+        Comment.Post = Comment.belongsTo(models.Post, {
           onDelete: "CASCADE",
           foreignKey: {
             allowNull: false
@@ -23,6 +23,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-
   return Comment;
 };
