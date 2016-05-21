@@ -9,9 +9,9 @@ const path = require('path');
 var mount = require('koa-mount');
 var convert = require('koa-convert');
 var graphqlHTTP = require('koa-graphql');
+var Schema = require('graphql/schema');
 
 const app = module.exports = koa();
-
 
 app.use(mount('/graphql', convert(graphqlHTTP({ schema: Schema, graphiql: true }))));
 
