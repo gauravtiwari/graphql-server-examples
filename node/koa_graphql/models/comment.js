@@ -1,6 +1,8 @@
-var bookshelf   = require('bookshelf');
+import bookshelf from '../bookshelf';
+import Post from './post';
+import User from './user';
 
-var Comment = module.exports = bookshelf.Model.extend({
+const Comment = bookshelf.Model.extend({
   tableName: 'comments',
   hasTimestamps: ['created_at', 'updated_at'],
   post: function() {
@@ -10,3 +12,5 @@ var Comment = module.exports = bookshelf.Model.extend({
     return this.belongsTo(User);
   }
 });
+
+export default Comment;
