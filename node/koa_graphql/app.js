@@ -1,5 +1,4 @@
 'use strict';
-const messages = require('./controllers/messages');
 const compress = require('koa-compress');
 const logger = require('koa-logger');
 const serve = require('koa-static');
@@ -9,19 +8,12 @@ const path = require('path');
 var mount = require('koa-mount');
 var convert = require('koa-convert');
 var graphqlHTTP = require('koa-graphql');
-var Schema = require('./graphql/schema');
+var Schema = require('./api/schema');
 
 const app = module.exports = koa();
 
 // Logger
 app.use(logger());
-
-app.use(route.get('/', messages.home));
-app.use(route.get('/messages', messages.list));
-app.use(route.get('/messages/:id', messages.fetch));
-app.use(route.post('/messages', messages.create));
-app.use(route.get('/async', messages.delay));
-app.use(route.get('/promise', messages.promise));
 app.use(mount('/graphql', graphqlHTTP({ schema: Schema, graphiql: true })));
 
 // Serve static files
