@@ -9,11 +9,9 @@ const path = require('path');
 var mount = require('koa-mount');
 var convert = require('koa-convert');
 var graphqlHTTP = require('koa-graphql');
-var Schema = require('graphql/schema');
+var Schema = require('./graphql/schema');
 
 const app = module.exports = koa();
-
-app.use(mount('/graphql', convert(graphqlHTTP({ schema: Schema, graphiql: true }))));
 
 // Logger
 app.use(logger());
@@ -24,6 +22,7 @@ app.use(route.get('/messages/:id', messages.fetch));
 app.use(route.post('/messages', messages.create));
 app.use(route.get('/async', messages.delay));
 app.use(route.get('/promise', messages.promise));
+app.use(mount('/graphql', graphqlHTTP({ schema: Schema, graphiql: true })));
 
 // Serve static files
 app.use(serve(path.join(__dirname, 'public')));
