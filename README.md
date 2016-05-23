@@ -12,6 +12,7 @@ This repo is work in progress and contains various implementations of GraphQL se
 
 ### Python
 * Django
+* Flask
 * ... More coming
 
 ### Ruby
