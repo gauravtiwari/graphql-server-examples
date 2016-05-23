@@ -1,0 +1,6 @@
+# Sequel Database Configuration
+
+development: "postgres://gaurav@localhost/sinatra_graphql_development"
+test: "postgres://gaurav@localhost/sinatra_graphql_test"
+production: "postgres://gaurav@localhost/sinatra_graphql_production"
+
