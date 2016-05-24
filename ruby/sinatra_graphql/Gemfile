@@ -8,10 +8,7 @@ gem 'sequel'
 gem 'sequel-seed'
 gem 'pg'
 
-# Redis
-gem 'hiredis', '~> 0.4'
-gem 'redis', '~> 3.0', :require => ['redis/connection/hiredis', 'redis']
-gem 'fakeredis', '~> 0.4'
+# Graphql
 gem 'graphql'
 gem 'graphql-relay'
 gem 'json'
