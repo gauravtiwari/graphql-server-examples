@@ -9,7 +9,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 # require "action_cable/engine"
-# require "sprockets/railtie"
+require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -18,8 +18,21 @@ Bundler.require(*Rails.groups)
 
 module RailsGraphql
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.autoload_paths << Rails.root.join('app/api')
+    config.autoload_paths << Rails.root.join('app/lib')
+    config.autoload_paths << Rails.root.join('app/api/mutations')
+    config.autoload_paths << Rails.root.join('app/api/types')
+    config.active_record.raise_in_transactional_callbacks = true
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.schema_format = :sql
+
+    # Configure rails g to skip helper/assets files
+    config.generators do |g|
+      g.assets = false
+      g.helper = false
+      g.view_specs      false
+      g.helper_specs    false
+    end
   end
 end
