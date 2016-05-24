@@ -1,4 +1,5 @@
 %w{ bundler find rake/testtask}.each { |lib| require lib }
+require 'sequel'
 
 task :default => :spec
 
@@ -7,14 +8,22 @@ Rake::TestTask.new(:spec) do |t|
 end
 
 namespace :db do
+  task :environment do
+    puts 'task environment'
+  end
   desc "Run all migrations in db/migrate"
   task :migrate => :connect do
     Sequel.extension(:migration)
     Sequel::Migrator.apply(DB, "db/migrate")
   end
 
+  task :seed => :connect do
+    Sequel.extension(:seed)
+    Sequel::Seeder.apply(DB, "db/seeds")
+  end
+
   task :connect => :environment do
     require "./config/initializers/database"
+    Dir.glob('./lib/{models}/*.rb').each { |file| require file }
   end
 end
-
