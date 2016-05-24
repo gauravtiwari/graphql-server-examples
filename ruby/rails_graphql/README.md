@@ -1,24 +1,64 @@
-# README
+# Rails Graphql Server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Setup and Running locally
 
-Things you may want to cover:
+```bash
+git clone repo
+cd to folder
+bundle install
+# make sure postgres is installed
+bundle exec rake db:create db:migrate
+bundle exec rake db:seed
+# run the server
+bundle exec rails s
+# Visit http://localhost:3000/
+```
 
-* Ruby version
+[Visit browser](http://localhost:3000)
 
-* System dependencies
+### Available Queries
+```
+{
+  all_posts {
+    id,
+    title,
+    body,
+    user {
+      id,
+      first_name
+    }
+    comments {
+      id,
+      body
+      user {
+        id,
+        first_name
+      }
+    }
 
-* Configuration
+  }
+ }
+```
 
-* Database creation
+```
+{
+  post(id: 2) {
+    id,
+    title,
+    body,
+    user {
+      id,
+      first_name
+    }
+    comments {
+      id,
+      body
+      user {
+        id,
+        first_name
+      }
+    }
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  }
+ }
+ ```
