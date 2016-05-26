@@ -1,3 +1,3 @@
-# Ruby based frameworks
+# Ruby based web frameworks
 
-A set of GraphQL server implementation on popular ruby frameworks.
+A set of GraphQL server implementation on popular ruby web frameworks.

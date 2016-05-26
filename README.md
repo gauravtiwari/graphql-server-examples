@@ -9,6 +9,16 @@ This repo is work in progress and contains various implementations of GraphQL se
 * Koa
 * ... More coming
 
+### Elixir
+* Phoenix
+
+### PHP
+* Laravel
+* ... More coming
+
+### Scala
+* Play
+
 ### Python
 * Django
 * Flask
