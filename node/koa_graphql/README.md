@@ -6,10 +6,14 @@
 git clone repo
 cd express_graphql
 npm install
+
+# ORM for database interaction
+npm install bookshelf -g -s
+# Query building and schema/migration/seed generation
+npm install knex -g -s 
 # Setup database
-npm install bookshelf -g -s # --ORM for database interaction
-npm install knex -g -s # --query building and schema/migration/seed generation
 createdb express_graphql_development
+# make sure knex installed globally or refer local installation
 knex migrate:latest
 knex seed:run
 # Run server
