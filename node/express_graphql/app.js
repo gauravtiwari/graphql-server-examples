@@ -7,9 +7,6 @@ var bodyParser = require('body-parser');
 var graphqlHTTP = require('express-graphql');
 var graphqlSchema = require('./graphql/schema');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -23,10 +20,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/graphql', graphqlHTTP({ schema: graphqlSchema, graphiql: true }));
+app.use('/', graphqlHTTP({ schema: graphqlSchema, graphiql: true }));
 
-app.use('/', routes);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
