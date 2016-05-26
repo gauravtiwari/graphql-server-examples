@@ -7,7 +7,6 @@ This repo is work in progress and contains various implementations of GraphQL se
 ### Node
 * Express
 * Koa
-* Hapi.js
 * ... More coming
 
 ### Python
