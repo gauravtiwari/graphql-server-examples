@@ -40,7 +40,7 @@
     "pk": 1,
     "fields": {
       "title": "First post title",
-      "description": "First post body",
+      "body": "First post body",
       "published_date": "2016-05-19 08:14:39",
       "user": 1
     }
@@ -51,7 +51,7 @@
     "pk": 2,
     "fields": {
       "title": "Second post title",
-      "description": "Second post body",
+      "body": "Second post body",
       "published_date": "2016-05-19 08:14:39",
       "user": 1
     }
@@ -62,7 +62,7 @@
     "pk": 3,
     "fields": {
       "title": "Third post title",
-      "description": "Third post body",
+      "body": "Third post body",
       "published_date": "2016-05-19 08:14:39",
       "user": 2
     }
@@ -73,7 +73,7 @@
     "pk": 4,
     "fields": {
       "title": "Fourth post title",
-      "description": "Fourth post body",
+      "body": "Fourth post body",
       "published_date": "2016-05-19 08:14:39",
       "user": 2
     }
@@ -84,7 +84,7 @@
     "pk": 5,
     "fields": {
       "title": "Fifth post title",
-      "description": "Fifth post body",
+      "body": "Fifth post body",
       "published_date": "2016-05-19 08:14:39",
       "user": 3
     }
@@ -95,7 +95,7 @@
     "pk": 6,
     "fields": {
       "title": "Sixth post title",
-      "description": "Sixth post body",
+      "body": "Sixth post body",
       "published_date": "2016-05-19 08:14:39",
       "user": 3
     }

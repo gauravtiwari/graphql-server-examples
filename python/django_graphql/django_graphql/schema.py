@@ -20,7 +20,7 @@ class CommentType(graphene.ObjectType):
 class PostType(graphene.ObjectType):
     id = graphene.String()
     title = graphene.String(description='title of the post')
-    description = graphene.String(description='description of the post')
+    body = graphene.String(description='body of the post')
     comments = graphene.List(graphene.LazyType(lambda _: CommentType))
     user = graphene.Field(
         'UserType',
@@ -39,7 +39,13 @@ class UserType(graphene.ObjectType):
     email = graphene.String(description='email of the user')
     username = graphene.String(description='username of the user')
     posts = graphene.List(graphene.LazyType(lambda _: PostType))
+    comments = graphene.List(graphene.LazyType(lambda _: CommentType))
 
+    @classmethod
+    def resolve_posts(cls, obj, input, info):
+      return obj.posts.all()
+    def resolve_comments(obj, cls, input):
+      return obj.comments.all()
 
 class Query(graphene.ObjectType):
     all_posts = graphene.List('PostType', description='All posts')
