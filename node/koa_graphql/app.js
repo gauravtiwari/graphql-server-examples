@@ -14,7 +14,7 @@ const app = module.exports = koa();
 
 // Logger
 app.use(logger());
-app.use(mount('/graphql', graphqlHTTP({ schema: Schema, graphiql: true })));
+app.use(mount('/', graphqlHTTP({ schema: Schema, graphiql: true })));
 
 // Serve static files
 app.use(serve(path.join(__dirname, 'public')));

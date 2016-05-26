@@ -1,5 +1,4 @@
 // Update with your config settings.
-
 var knex = require('knex')({
     client: 'postgres',
     connection: {
