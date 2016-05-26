@@ -23,8 +23,7 @@
     "sequelize": "^3.23.2",
     "sequelize-cli": "^2.4.0",
     "serve-favicon": "~2.3.0",
-    "sqlite3": "^3.1.4",
-    "underscore": "^1.8.3"
+    "sqlite3": "^3.1.4"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",

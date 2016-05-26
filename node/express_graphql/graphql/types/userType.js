@@ -3,7 +3,6 @@ import commentType from './commentType';
 import models from '../../models';
 import { resolver, attributeFields } from 'graphql-sequelize';
 import { GraphQLObjectType, GraphQLNonNull, GraphQLList, GraphQLInt, GraphQLString} from 'graphql';
-import { _ } from 'underscore';
 
 let userType = new GraphQLObjectType({
   name: 'User',
