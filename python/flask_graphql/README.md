@@ -16,7 +16,7 @@ python app.py
 
 * Note: If you using password and username for postgres please include that in the url
 
-[Visit](http://127.0.0.1:5000/)
+[Visit browser](http://127.0.0.1:5000/)
 
 ### Queries
 

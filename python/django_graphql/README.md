@@ -8,7 +8,7 @@ python ./manage.py loaddata seed
 python manage.py runserver
 ```
 
-[Visit](http://127.0.0.1:8000/)
+[Visit browser](http://127.0.0.1:8000/)
 
 ### Queries
 
