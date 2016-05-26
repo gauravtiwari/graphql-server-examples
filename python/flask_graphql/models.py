@@ -15,6 +15,10 @@ class User(db.Model):
     last_name = db.Column(db.String)
     email = db.Column(db.String)
     username = db.Column(db.String)
+    posts = db.relationship('Post', backref='user',
+                                lazy='dynamic')
+    comments = db.relationship('Comment', backref='user',
+                                lazy='dynamic')
 
 class Post(db.Model):
     __tablename__ = 'posts'
@@ -22,7 +26,8 @@ class Post(db.Model):
     title = db.Column(db.String(60))
     body = db.Column(db.String)
     user_id = db.Column('user_id', db.Integer, db.ForeignKey('users.users_id'))
-    user = db.relationship('User', foreign_keys=user_id)
+    comments = db.relationship('Comment', backref='post',
+                                lazy='dynamic')
 
 class Comment(db.Model):
     __tablename__ = 'comments'
@@ -30,5 +35,3 @@ class Comment(db.Model):
     body = db.Column(db.String)
     user_id = db.Column('user_id', db.Integer, db.ForeignKey('users.users_id'))
     post_id = db.Column('post_id', db.Integer, db.ForeignKey('posts.posts_id'))
-    user = db.relationship('User', foreign_keys=user_id)
-    post = db.relationship('Post', foreign_keys=post_id)
