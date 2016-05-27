@@ -1,8 +1,10 @@
 # WIP: Various GraphQL Server API Examples
 
-This repo is work in progress and contains various implementations of GraphQL server in various frameworks and languages. If you would like to add one of your own, just open a PR.
+This repo is work in progress and contains various examples of GraphQL server in popular web frameworks and languages.
 
-## GraphQL Server API Implementations
+If you would like to add one of your own, just open a PR.
+
+## Multiple GraphQL Server API Examples
 
 ### Node
 * Express
@@ -13,11 +15,11 @@ This repo is work in progress and contains various implementations of GraphQL se
 * Phoenix
 
 ### PHP
-* Laravel
+* Laravel (WIP)
 * ... More coming
 
 ### Scala
-* Play
+* Play (WIP)
 
 ### Python
 * Django
@@ -28,3 +30,8 @@ This repo is work in progress and contains various implementations of GraphQL se
 * Sinatra
 * Rails
 * ... More coming
+
+### TODO
+* TOKEN auth
+* Make API consistent in all implementations (kinda of there)
+* CSRF protection for required frameworks
