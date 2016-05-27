@@ -6,5 +6,8 @@ PostType = GraphQL::ObjectType.define do
   field :title, !types.String
   field :body, !types.String
   field :user, -> { UserType }
-  field :comments, types[!CommentType]
+  field :comments do
+    type types[!CommentType]
+    resolve -> (obj, args, ctx) { obj.comments.includes(:user) }
+  end
 end

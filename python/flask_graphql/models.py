@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 
 class User(db.Model):
     __tablename__ = 'users'
-    id = db.Column('users_id', db.Integer, primary_key=True)
+    id = db.Column('id', db.Integer, primary_key=True)
     first_name = db.Column(db.String(60))
     last_name = db.Column(db.String)
     email = db.Column(db.String)
@@ -22,16 +22,16 @@ class User(db.Model):
 
 class Post(db.Model):
     __tablename__ = 'posts'
-    id = db.Column('posts_id', db.Integer, primary_key=True)
+    id = db.Column('id', db.Integer, primary_key=True)
     title = db.Column(db.String(60))
     body = db.Column(db.String)
-    user_id = db.Column('user_id', db.Integer, db.ForeignKey('users.users_id'))
+    user_id = db.Column('user_id', db.Integer, db.ForeignKey('users.id'))
     comments = db.relationship('Comment', backref='post',
                                 lazy='dynamic')
 
 class Comment(db.Model):
     __tablename__ = 'comments'
-    id = db.Column('comments_id', db.Integer, primary_key=True)
+    id = db.Column('id', db.Integer, primary_key=True)
     body = db.Column(db.String)
-    user_id = db.Column('user_id', db.Integer, db.ForeignKey('users.users_id'))
-    post_id = db.Column('post_id', db.Integer, db.ForeignKey('posts.posts_id'))
+    user_id = db.Column('user_id', db.Integer, db.ForeignKey('users.id'))
+    post_id = db.Column('post_id', db.Integer, db.ForeignKey('posts.id'))
