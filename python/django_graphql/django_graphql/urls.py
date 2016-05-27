@@ -25,5 +25,5 @@ urlpatterns = [
     url(r'^graphql', csrf_exempt(GraphQLView.as_view(schema=schema))),
     url(r'^blog/', include('blog.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^graphiql', include('django_graphiql.urls')),
+    url(r'^', include('django_graphiql.urls')),
 ]

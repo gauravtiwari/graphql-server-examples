@@ -10,7 +10,7 @@ QueryType = GraphQL::ObjectType.define do
 
   field :all_posts do
     type types[!PostType]
-    resolve -> (obj, args, ctx) { Post.all }
+    resolve -> (obj, args, ctx) { Post.all.includes(:user, :comments) }
   end
 end
 
