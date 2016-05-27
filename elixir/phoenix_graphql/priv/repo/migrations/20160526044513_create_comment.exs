@@ -3,14 +3,14 @@ defmodule PhoenixGraphql.Repo.Migrations.CreateComment do
 
   def change do
     create table(:comments) do
-      add :body, :string
+      add :body, :text
       add :user_id, references(:users, on_delete: :nothing)
-      add :post_ud, references(:posts, on_delete: :nothing)
+      add :post_id, references(:posts, on_delete: :nothing)
 
       timestamps
     end
     create index(:comments, [:user_id])
-    create index(:comments, [:post_ud])
+    create index(:comments, [:post_id])
 
   end
 end
