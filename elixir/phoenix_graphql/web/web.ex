@@ -22,7 +22,7 @@ defmodule PhoenixGraphql.Web do
 
       import Ecto
       import Ecto.Changeset
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
     end
   end
 
@@ -32,8 +32,7 @@ defmodule PhoenixGraphql.Web do
 
       alias PhoenixGraphql.Repo
       import Ecto
-      import Ecto.Query
-
+      import Ecto.Query, only: [from: 1, from: 2]
       import PhoenixGraphql.Router.Helpers
       import PhoenixGraphql.Gettext
     end
@@ -45,6 +44,9 @@ defmodule PhoenixGraphql.Web do
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
+
+      # Use all HTML functionality (forms, tags, etc)
+      use Phoenix.HTML
 
       import PhoenixGraphql.Router.Helpers
       import PhoenixGraphql.ErrorHelpers
@@ -64,7 +66,7 @@ defmodule PhoenixGraphql.Web do
 
       alias PhoenixGraphql.Repo
       import Ecto
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
       import PhoenixGraphql.Gettext
     end
   end
