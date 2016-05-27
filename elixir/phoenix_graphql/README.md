@@ -7,7 +7,7 @@ To start your Phoenix app:
   * Seed the database with `mix run priv/repo/seeds.exs`
   * Start Phoenix endpoint with `mix phoenix.server`
 
-* Note: Make sure to change the db settings in dev.exs *
+*Note: Make sure to change the db settings in dev.exs*
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
