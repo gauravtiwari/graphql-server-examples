@@ -4,7 +4,7 @@ defmodule PhoenixGraphql.Comment do
   schema "comments" do
     field :body, :string
     belongs_to :user, PhoenixGraphql.User
-    belongs_to :post_ud, PhoenixGraphql.PostUd
+    belongs_to :post, PhoenixGraphql.Post
 
     timestamps
   end

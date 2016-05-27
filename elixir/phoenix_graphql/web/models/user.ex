@@ -7,6 +7,9 @@ defmodule PhoenixGraphql.User do
     field :email, :string
     field :username, :string
 
+    has_many :comments, PhoenixGraphql.Comment
+    has_many :posts, PhoenixGraphql.Post
+
     timestamps
   end
 
