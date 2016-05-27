@@ -63,3 +63,6 @@ bundle exec rackup -p 3000
   }
  }
  ```
+
+### DB
+* Postgresql (with ruby Sequel ORM)
