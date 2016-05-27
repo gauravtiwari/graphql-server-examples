@@ -16,7 +16,7 @@ DEBUG=express_graphql:* npm start
 
 [Visit browser](http://localhost:3000/)
 
-### Queries
+### Supported API Queries
 
 ```
 {

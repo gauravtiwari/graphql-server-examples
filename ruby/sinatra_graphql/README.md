@@ -17,7 +17,7 @@ bundle exec rackup -p 3000
 
 [Visit browser](http://localhost:3000)
 
-### Available Queries
+### Supported API Queries
 ```
 {
   all_posts {

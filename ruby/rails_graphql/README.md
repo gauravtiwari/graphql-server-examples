@@ -16,7 +16,7 @@ bundle exec rails s
 
 [Visit browser](http://localhost:3000)
 
-### Available Queries
+### Supported API Queries
 ```
 {
   all_posts {
