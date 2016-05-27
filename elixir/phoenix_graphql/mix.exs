@@ -18,8 +18,8 @@ defmodule PhoenixGraphql.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {PhoenixGraphql, []},
-     applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+                    :phoenix_ecto, :postgrex, :absinthe_plug]]
   end
 
   # Specifies which paths to compile per environment.
@@ -33,8 +33,11 @@ defmodule PhoenixGraphql.Mixfile do
     [{:phoenix, "~> 1.2.0-rc"},
      {:phoenix_pubsub, "~> 1.0.0-rc"},
      {:phoenix_ecto, "~> 3.0-rc"},
+     {:phoenix_html, "~> 2.4"},
      {:postgrex, ">= 0.0.0"},
      {:gettext, "~> 0.11"},
+     {:earmark, "~> 0.2.1"},
+     {:absinthe_plug, "~> 1.1.3"},
      {:cowboy, "~> 1.0"}]
   end
 
