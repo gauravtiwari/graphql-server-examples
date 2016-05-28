@@ -12,7 +12,7 @@ defmodule PhoenixGraphql.Api.Schema do
 	    	(_, _) -> Resolver.all(
 	    		%{
 	    			model: PhoenixGraphql.Post,
-	    			preloaders: [:user, :comments]
+	    			preloaders: [:user, :comments,  [comments: :user]]
 	    		}
 	    	)
 	    end
