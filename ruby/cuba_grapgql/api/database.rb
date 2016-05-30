@@ -21,7 +21,7 @@ end
 
 class Post
   include DataMapper::Resource
-  property :user_id, Integer,  :required => true
+  property :user_id, Integer,  :required => true, index: true
 
   property :id,         Serial    # An auto-increment integer key
   property :title,      String    # A varchar type string, for short strings
@@ -38,8 +38,8 @@ class Comment
 
   property :id,         Serial
   property :body,       Text
-  property :user_id, Integer, :required => true
-  property :post_id, Integer, :required => true
+  property :user_id, Integer, :required => true, index: true
+  property :post_id, Integer, :required => true, index: true
   property :created_at, DateTime
   property :updated_at, DateTime
 
