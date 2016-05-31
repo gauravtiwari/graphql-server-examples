@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
+        "folklore/graphql": "0.4.*",
         "laravel/framework": "5.2.*"
     },
     "require-dev": {
