@@ -1,0 +1,19 @@
+source 'https://rubygems.org'
+
+group :development do
+  gem 'rake'
+end
+
+gem 'thin'
+# gem 'unicorn'
+
+gem 'roda'
+gem 'tilt'
+gem 'dotenv'
+gem 'rom'
+gem 'rom-sql'
+gem 'rom-model'
+gem 'graphql'
+gem 'json'
+gem 'pg'
+gem 'rack_csrf'
