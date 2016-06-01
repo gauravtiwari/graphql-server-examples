@@ -5,6 +5,7 @@ require 'cuba/render'
 require 'tilt/erb'
 
 Cuba.plugin Cuba::Render
+DataMapper::Logger.new(STDOUT, :debug, '[DataMapper] ')
 
 # Local config
 require "find"
