@@ -1,1 +1,1 @@
-Dir['./types/*.rb'].each{|f| require f}
+Dir['./api/types/*.rb'].each{|f| require f}

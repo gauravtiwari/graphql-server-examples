@@ -1,14 +1,15 @@
 class RodaGraphql
   route do |r|
     r.root do
-      view("welcome")
+      view("graphiql")
     end
 
     r.on "graphql" do
-      r.get do
+      r.post do
+        params = JSON.parse(request.body.read)
         result = Schema.execute(
-          r["query"],
-          variables: r["variables"]
+          params["query"],
+          variables: params["variables"]
         )
 
         response['Content-Type'] = 'application/json; charset=utf-8'

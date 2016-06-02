@@ -1,13 +1,18 @@
 class RodaGraphql < Roda
   def self.css_files
     [].tap do |css|
-      # css << "main.css"
+      css << "graphiql-0.7.0.css"
+      css << "main.css"
+      css << "application.css"
     end
   end
 
   def self.js_files
     [].tap do |js|
-      # js << "main.js"
+      js << "react-15.0.1.js"
+      js << "react-dom-15.0.1.js"
+      js << "fetch-0.10.1.js"
+      js << "graphiql-0.7.0.js"
     end
   end
 

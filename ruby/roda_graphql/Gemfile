@@ -4,16 +4,15 @@ group :development do
   gem 'rake'
 end
 
-gem 'thin'
-# gem 'unicorn'
-
+gem 'puma'
 gem 'roda'
 gem 'tilt'
 gem 'dotenv'
-gem 'rom'
-gem 'rom-sql'
-gem 'rom-model'
 gem 'graphql'
 gem 'json'
+# Database Stack
+gem 'sequel'
+gem 'sequel-seed'
 gem 'pg'
+gem 'colorize'
 gem 'rack_csrf'

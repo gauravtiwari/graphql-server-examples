@@ -5,12 +5,12 @@ QueryType = GraphQL::ObjectType.define do
   field :post do
     type PostType
     argument :id, !types.ID
-    resolve -> (obj, args, ctx) { Post.get(args["id"]) }
+    resolve -> (obj, args, ctx) { Post.find(id: args["id"]) }
   end
 
   field :all_posts do
     type types[!PostType]
-    resolve -> (obj, args, ctx) { puts 'hello' [] }
+    resolve -> (obj, args, ctx) { Post.all }
   end
 end
 

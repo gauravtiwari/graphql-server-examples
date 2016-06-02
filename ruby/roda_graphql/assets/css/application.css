@@ -1,0 +1,10 @@
+
+@import "graphiql-0.7.0.css";
+@import "main.css";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+}
