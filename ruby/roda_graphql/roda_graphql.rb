@@ -1,5 +1,3 @@
-require './models'
-require './types'
 require './api/schema'
 
 Dotenv.load
