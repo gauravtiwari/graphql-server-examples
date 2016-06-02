@@ -9,7 +9,6 @@ gem 'roda'
 gem 'tilt'
 gem 'dotenv'
 gem 'graphql'
-gem 'json'
 # Database Stack
 gem 'sequel'
 gem 'sequel-seed'

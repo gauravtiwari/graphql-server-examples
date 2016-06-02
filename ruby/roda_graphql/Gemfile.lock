@@ -4,7 +4,6 @@ GEM
     colorize (0.7.7)
     dotenv (2.1.1)
     graphql (0.14.0)
-    json (1.8.3)
     pg (0.18.4)
     puma (3.4.0)
     rack (1.6.4)
@@ -25,7 +24,6 @@ DEPENDENCIES
   colorize
   dotenv
   graphql
-  json
   pg
   puma
   rack_csrf
