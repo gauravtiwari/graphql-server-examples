@@ -62,7 +62,7 @@ GEM
     multi_json (1.12.1)
     rack (1.6.4)
     stringex (1.5.1)
-    tilt (2.0.4)
+    tilt (2.0.5)
     uuidtools (2.1.5)
 
 PLATFORMS
