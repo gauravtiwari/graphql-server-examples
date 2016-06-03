@@ -15,6 +15,8 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack_csrf (2.5.0)
+      rack (>= 1.1.0)
     rake (10.5.0)
     sequel (4.35.0)
     sequel-seed (0.3.2)
@@ -43,6 +45,7 @@ DEPENDENCIES
   minitest (~> 5.2)
   pg
   rack-test (~> 0.6)
+  rack_csrf
   rake (~> 10.0)
   sequel
   sequel-seed

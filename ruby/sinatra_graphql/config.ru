@@ -4,8 +4,8 @@ require 'tilt/erb'
 require 'bundler'
 require 'logger'
 require 'colorize'
+require 'rack/csrf'
 Bundler.require
-
 # Local config
 require "find"
 
@@ -34,4 +34,6 @@ DB.loggers << logger if logger
 
 # Load app
 require "sinatra_graphql"
+use Rack::Session::Cookie
+use Rack::Csrf, :raise => true
 run SinatraGraphql
