@@ -34,6 +34,6 @@ DB.loggers << logger if logger
 
 # Load app
 require "sinatra_graphql"
-use Rack::Session::Cookie
+use Rack::Session::Cookie, secret: 'hello'
 use Rack::Csrf, :raise => true
 run SinatraGraphql
