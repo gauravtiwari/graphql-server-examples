@@ -15,7 +15,7 @@ If you would like to add one of your own, just open a PR.
 * Phoenix
 
 ### PHP
-* Laravel (WIP)
+* Laravel
 * ... More coming
 
 ### Scala
