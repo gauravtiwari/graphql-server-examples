@@ -7,12 +7,12 @@ use Folklore\GraphQL\Support\Query;
 class PostQuery extends Query {
 
   protected $attributes = [
-    'name' => 'Post query'
+    'name' => 'PostQuery'
   ];
 
   public function type()
   {
-    return Type::nonNull(GraphQL::type('post'));
+    return GraphQL::type('post');
   }
 
   public function resolve($root, $args)

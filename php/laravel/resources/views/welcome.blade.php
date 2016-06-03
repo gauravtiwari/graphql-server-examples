@@ -78,6 +78,10 @@
       return fetch('/graphql', {
         method: 'post',
         body: JSON.stringify(graphQLParams),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         credentials: 'include',
       }).then(function (response) {
         return response.json()

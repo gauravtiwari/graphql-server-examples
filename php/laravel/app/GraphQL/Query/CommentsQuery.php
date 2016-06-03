@@ -7,12 +7,12 @@ use Folklore\GraphQL\Support\Query;
 class CommentsQuery extends Query {
 
   protected $attributes = [
-    'name' => 'Comments Query'
+    'name' => 'CommentsQuery'
   ];
 
   public function type()
   {
-    return Type::nonNull(GraphQL::type('comment'));
+    return GraphQL::type('comment');
   }
 
   public function resolve($root, $args)

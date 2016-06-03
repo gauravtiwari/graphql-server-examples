@@ -8,7 +8,7 @@ use App\Post;
 class PostsQuery extends Query {
 
   protected $attributes = [
-    'name' => 'Posts query'
+    'name' => 'PostsQuery'
   ];
 
   public function type()
@@ -19,7 +19,7 @@ class PostsQuery extends Query {
   public function args()
   {
     return [
-      'id' => ['name' => 'id', 'type' => Type::string()],
+      'id' => ['name' => 'id', 'type' => Type::Int()],
     ];
   }
 
@@ -27,11 +27,12 @@ class PostsQuery extends Query {
   {
     if(isset($args['id']))
     {
-      return Post::where('id' , $args['id'])->get();
+      return Post::where('id' , $args['id'])->with('user', 'comments')->get();
     }
     else
     {
-      return Post::all();
+      $posts = Post::query();
+      return $posts->with('user', 'comments')->get();
     }
   }
 

@@ -7,7 +7,7 @@ use Folklore\GraphQL\Support\Query;
 class UserQuery extends Query {
 
   protected $attributes = [
-    'name' => 'User query'
+    'name' => 'UserQuery'
   ];
 
   public function type()

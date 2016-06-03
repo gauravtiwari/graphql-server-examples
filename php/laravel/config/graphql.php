@@ -56,14 +56,13 @@ return [
     //
     'schema' => [
         'query' => [
-          'users' => 'App\GraphQL\Query\UsersQuery',
           'user' => 'App\GraphQL\Query\UserQuery',
           'post' => 'App\GraphQL\Query\PostQuery',
           'comments' => 'App\GraphQL\Query\CommentsQuery',
           'posts' => 'App\GraphQL\Query\PostsQuery',
         ],
         'mutation' => [
-
+          'updateUserPassword' => 'App\GraphQL\Mutation\UpdateUserPasswordMutation',
         ]
     ],
 
