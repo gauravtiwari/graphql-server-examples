@@ -12,7 +12,7 @@ class CommentsQuery extends Query {
 
   public function type()
   {
-    return GraphQL::type('comment');
+    return Type::listOf(GraphQL::type('comment'));
   }
 
   public function resolve($root, $args)
