@@ -29,7 +29,8 @@ If you would like to add one of your own, just open a PR.
 ### Ruby
 * Sinatra
 * Rails
-* ... More coming
+* Cuba
+* Roda
 
 ### TODO
 * TOKEN auth
