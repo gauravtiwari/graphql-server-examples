@@ -2,18 +2,21 @@ source 'https://rubygems.org/'
 
 # App Stack
 gem 'sinatra', '~> 1.4'
-gem 'sinatra-contrib'
+
 # Database Stack
 gem 'sequel'
 gem 'sequel-seed'
 gem 'pg'
 gem 'puma'
 gem 'colorize'
-gem 'rack_csrf'
+gem 'rack-protection'
+
 # Graphql
 gem 'graphql'
-gem 'graphql-relay'
 gem 'json'
+
+# Token
+gem 'rack-jwt'
 
 group :development do
   gem 'rake', '~> 10.0'

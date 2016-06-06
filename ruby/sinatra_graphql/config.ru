@@ -4,12 +4,11 @@ require 'tilt/erb'
 require 'bundler'
 require 'logger'
 require 'colorize'
-require 'rack/csrf'
 Bundler.require
 # Local config
 require "find"
 
-%w{config/initializers lib}.each do |load_path|
+%w{config/initializers lib middlewares}.each do |load_path|
   Find.find(load_path) { |f|
     require f unless f.match(/\/\..+$/) || File.directory?(f)
   }
@@ -34,6 +33,4 @@ DB.loggers << logger if logger
 
 # Load app
 require "sinatra_graphql"
-use Rack::Session::Cookie, secret: 'hello'
-use Rack::Csrf, :raise => true
 run SinatraGraphql
