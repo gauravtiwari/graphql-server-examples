@@ -16,10 +16,5 @@ require "find"
   }
 end
 
-require 'rack/csrf'
-Cuba.use Rack::Session::Cookie, secret: 'hello'
-Cuba.use Rack::Csrf
-
 require "./cuba_grapgql"
-
 run Cuba
