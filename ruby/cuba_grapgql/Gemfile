@@ -9,3 +9,6 @@ gem 'tilt'
 gem 'rack_csrf'
 gem 'json'
 gem 'dm-postgres-adapter'
+
+# Token
+gem 'jwt'
