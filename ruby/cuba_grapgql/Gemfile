@@ -6,9 +6,9 @@ gem 'puma'
 gem 'data_mapper'
 gem 'graphql'
 gem 'tilt'
-gem 'rack_csrf'
 gem 'json'
 gem 'dm-postgres-adapter'
+gem 'rack-protection'
 
 # Token
-gem 'jwt'
+gem 'rack-jwt'

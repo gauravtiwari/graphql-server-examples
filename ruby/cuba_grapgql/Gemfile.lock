@@ -63,8 +63,11 @@ GEM
     multi_json (1.12.1)
     puma (3.4.0)
     rack (1.6.4)
-    rack_csrf (2.5.0)
-      rack (>= 1.1.0)
+    rack-jwt (0.3.0)
+      jwt (~> 1.5.2)
+      rack (>= 1.6.0)
+    rack-protection (1.5.3)
+      rack
     stringex (1.5.1)
     tilt (2.0.5)
     uuidtools (2.1.5)
@@ -78,9 +81,9 @@ DEPENDENCIES
   dm-postgres-adapter
   graphql
   json
-  jwt
   puma
-  rack_csrf
+  rack-jwt
+  rack-protection
   tilt
 
 BUNDLED WITH
