@@ -7,6 +7,7 @@ gem 'sinatra-contrib'
 gem 'sequel'
 gem 'sequel-seed'
 gem 'pg'
+gem 'puma'
 gem 'colorize'
 gem 'rack_csrf'
 # Graphql
