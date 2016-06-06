@@ -16,6 +16,11 @@ bundle exec rails s
 
 [Visit browser](http://localhost:3000)
 
+# Features
+* Graphql API
+* CSRF and SESSION
+* TOKEN AUTH
+
 ### Supported API Queries
 ```
 {

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GraphiQL</title>
+    <%= stylesheet_link_tag("graphiql/rails/application") %>
+    <%= javascript_include_tag("graphiql/rails/application") %>
+    <% if GraphiQL::Rails.config.csrf %>
+    <%= csrf_meta_tags %>
+    <%# Wrap this into helper method or something for a real app %>
+    <meta charset="utf-8" name="token" content="<%= Rack::JWT::Token.encode(
+    {user_id: 1}, 'super_secret_key', 'HS256') %>">
+    <% end %>
+  </head>
+  <body>
+    <div id="graphiql-container">
+      Loading...
+    </div>
+    <script>
+    var parameters = {};
+    <% if GraphiQL::Rails.config.query_params %>
+    // Parse the search string to get url parameters.
+    var search = window.location.search;
+    search.substr(1).split('&').forEach(function (entry) {
+     var eq = entry.indexOf('=');
+     if (eq >= 0) {
+       parameters[decodeURIComponent(entry.slice(0, eq))] =
+         decodeURIComponent(entry.slice(eq + 1));
+     }
+    });
+    // if variables was provided, try to format it.
+    if (parameters.variables) {
+     try {
+       parameters.variables =
+         JSON.stringify(JSON.parse(parameters.variables), null, 2);
+     } catch (e) {
+       // Do nothing, we want to display the invalid JSON as a string, rather
+       // than present an error.
+     }
+    }
+    // When the query and variables string is edited, update the URL bar so
+    // that it can be easily shared
+    function onEditQuery(newQuery) {
+     parameters.query = newQuery;
+     updateURL();
+    }
+    function onEditVariables(newVariables) {
+     parameters.variables = newVariables;
+     updateURL();
+    }
+    function updateURL() {
+     var newSearch = '?' + Object.keys(parameters).map(function (key) {
+       return encodeURIComponent(key) + '=' +
+         encodeURIComponent(parameters[key]);
+     }).join('&');
+     history.replaceState(null, null, newSearch);
+    }
+    <% end %>
+    // Defines a GraphQL fetcher using the fetch API.
+    var graphQLEndpoint = "<%= graphql_endpoint_path %>";
+    function graphQLFetcher(graphQLParams) {
+      var token = document.getElementsByName('token')[0].content;
+      return fetch(graphQLEndpoint, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': 'Bearer ' + token,
+          <% if GraphiQL::Rails.config.csrf %>
+           'X-CSRF-Token': document.getElementsByName("csrf-token")[0].content
+          <% end %>
+        },
+        body: JSON.stringify(graphQLParams),
+        credentials: 'include',
+      }).then(function (response) {
+        return response.json()
+      });
+    }
+    var defaultQuery = "<%= GraphiQL::Rails.config.initial_query.gsub(/\n/, "\\n") %>";
+    // Render <GraphiQL /> into the body.
+    ReactDOM.render(
+      React.createElement(GraphiQL, {
+        fetcher: graphQLFetcher,
+        defaultQuery: defaultQuery,
+        <% if GraphiQL::Rails.config.query_params %>
+        query: parameters.query,
+        variables: parameters.variables,
+        onEditQuery: onEditQuery,
+        onEditVariables: onEditVariables
+        <% end %>
+      }),
+      document.getElementById("graphiql-container")
+    );
+    </script>
+  </body>
+</html>
