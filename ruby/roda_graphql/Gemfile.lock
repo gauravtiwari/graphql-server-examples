@@ -4,11 +4,15 @@ GEM
     colorize (0.7.7)
     dotenv (2.1.1)
     graphql (0.14.0)
+    jwt (1.5.4)
     pg (0.18.4)
     puma (3.4.0)
     rack (1.6.4)
-    rack_csrf (2.5.0)
-      rack (>= 1.1.0)
+    rack-jwt (0.3.0)
+      jwt (~> 1.5.2)
+      rack (>= 1.6.0)
+    rack-protection (1.5.3)
+      rack
     rake (11.1.2)
     roda (2.14.0)
       rack
@@ -26,7 +30,8 @@ DEPENDENCIES
   graphql
   pg
   puma
-  rack_csrf
+  rack-jwt
+  rack-protection
   rake
   roda
   sequel

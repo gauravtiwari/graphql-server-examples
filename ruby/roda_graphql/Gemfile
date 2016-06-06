@@ -8,10 +8,18 @@ gem 'puma'
 gem 'roda'
 gem 'tilt'
 gem 'dotenv'
+
+# Graphql
 gem 'graphql'
+
 # Database Stack
 gem 'sequel'
 gem 'sequel-seed'
 gem 'pg'
 gem 'colorize'
-gem 'rack_csrf'
+
+# Protection :)
+gem 'rack-protection'
+
+# Token :)
+gem 'rack-jwt'

@@ -41,15 +41,17 @@
     }
     // Defines a GraphQL fetcher using the fetch API.
     function graphQLFetcher(graphQLParams) {
-      var token = document.getElementsByName('_csrf')[0].content;
+      var csrf = document.getElementsByName('_csrf')[0].content;
+      var token = document.getElementsByName('token')[0].content;
       return fetch('/graphql', {
         method: 'post',
         body: JSON.stringify(graphQLParams),
         credentials: 'same-origin',
         headers: {
-          X_CSRF_TOKEN: token,
+          X_CSRF_TOKEN: csrf,
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + token
         }
       }).then(function (response) {
         return response.json()
