@@ -60,6 +60,7 @@ GEM
     json (1.8.3)
     json_pure (1.8.3)
     multi_json (1.12.1)
+    puma (3.4.0)
     rack (1.6.4)
     rack_csrf (2.5.0)
       rack (>= 1.1.0)
@@ -76,6 +77,7 @@ DEPENDENCIES
   dm-postgres-adapter
   graphql
   json
+  puma
   rack_csrf
   tilt
 
