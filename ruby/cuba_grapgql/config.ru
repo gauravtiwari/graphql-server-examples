@@ -10,7 +10,7 @@ DataMapper::Logger.new(STDOUT, :debug, '[DataMapper] ')
 # Local config
 require "find"
 
-%w{api api/types}.each do |load_path|
+%w{api api/types middlewares}.each do |load_path|
   Find.find(load_path) { |f|
     require f unless f.match(/\/\..+$/) || File.directory?(f)
   }

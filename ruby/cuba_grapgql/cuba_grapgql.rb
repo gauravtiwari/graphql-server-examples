@@ -1,18 +1,18 @@
-# If you need extra protection.
 require 'rack/protection'
-Cuba.use Rack::Session::Cookie, secret: 'hello'
+Cuba.use Rack::Session::Cookie, secret: 'super_secret_key'
 Cuba.use Rack::Protection
 Cuba.use Rack::Protection::RemoteReferrer
-Cuba.use Rack::JWT::Auth, {secret: nil, verify: false, options: { algorithm: 'none' }}
+# Use middleware for demo (use authentication in real app)
+Cuba.use PassAuthToken
+# Verify token
+Cuba.use Rack::JWT::Auth, {secret: 'super_secret_key', options: { algorithm: 'HS256' }}
 
-# To launch just type: 'rackup' in your console
 Cuba.define do
+  # Pass token to the view
   data = {user_id: 1}
-  status, headers, body = @app.call env
+  token = Rack::JWT::Token.encode(data, 'super_secret_key', 'HS256')
 
-  token = Rack::JWT::Token.encode(data, nil, 'none')
-
-  on get, { 'AUTHORIZATION' => "Bearer #{Rack::JWT::Token.encode(data, nil, 'none')}" } do
+  on get do
     on root do
       res.write view("graphiql", token: token)
     end
