@@ -5,7 +5,7 @@ QueryType = GraphQL::ObjectType.define do
   field :post do
     type PostType
     argument :id, !types.ID
-    resolve -> (obj, args, ctx) { Post.find(args["id"]) }
+    resolve -> (obj, args, ctx) { Post.find(args["id"]).includes(:user, :comments) }
   end
 
   field :all_posts do
