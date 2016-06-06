@@ -7,7 +7,6 @@ class SinatraGraphql < Sinatra::Base
   use PassAuthToken
   use Rack::JWT::Auth, {secret: 'super_secret_key', exclude: %w(/javascripts /stylesheets), options: { algorithm: 'HS256' }}
 
-
   get "/" do
     # Pass token to the view
     data = {user_id: 1}
