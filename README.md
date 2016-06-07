@@ -26,7 +26,7 @@ If you would like to add one of your own, just open a PR.
 * Flask
 * ... More coming
 
-### Ruby
+### Ruby (with token auth)
 * Sinatra
 * Rails
 * Cuba
