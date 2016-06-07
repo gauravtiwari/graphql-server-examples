@@ -38,6 +38,7 @@ defmodule PhoenixGraphql.Mixfile do
      {:gettext, "~> 0.11"},
      {:earmark, "~> 0.2.1"},
      {:absinthe_plug, "~> 1.1.3"},
+     {:joken, "~> 1.2.1"},
      {:cowboy, "~> 1.0"}]
   end
 
