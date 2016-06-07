@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" name="_csrf" content="<%= get_csrf_token() %>" />
     <style>
       body {
         height: 100%;

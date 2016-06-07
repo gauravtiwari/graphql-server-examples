@@ -16,6 +16,7 @@ defmodule PhoenixGraphql.Router do
     plug :accepts, ["json"]
     plug :fetch_session
     plug :fetch_flash
+    plug :protect_from_forgery
     plug Joken.Plug, verify: &PhoenixGraphql.Router.verify_function/0
     plug PhoenixGraphql.Context
   end
