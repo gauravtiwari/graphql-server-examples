@@ -9,6 +9,11 @@ To start your Phoenix app:
 
 *Note: Make sure to change the db settings in dev.exs*
 
+# Features
+* Graphql API
+* CSRF and SESSION
+* TOKEN AUTH
+
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ## Supported API Queries
