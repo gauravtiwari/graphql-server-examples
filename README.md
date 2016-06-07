@@ -11,7 +11,7 @@ If you would like to add one of your own, just open a PR.
 * Koa
 * ... More coming
 
-### Elixir
+### Elixir (with token auth)
 * Phoenix
 
 ### PHP
