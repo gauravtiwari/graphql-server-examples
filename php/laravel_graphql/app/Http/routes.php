@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@welcome');
+
+Route::match(['get', 'post'], '/graphql', array(
+  'as' => 'graphql.query',
+  'uses' => '\Folklore\GraphQL\GraphQLController@query'
+))->middleware(['jwt.auth']);
