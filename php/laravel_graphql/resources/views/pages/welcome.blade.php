@@ -6,7 +6,8 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-
+  <meta charset="utf-8" name="_csrf" content="{{ csrf_token() }}" />
+  <meta charset="utf-8" name="token" content="{{ $token }}">
   <title>Laravel Graphql</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,14 +76,18 @@
     }
     // Defines a GraphQL fetcher using the fetch API.
     function graphQLFetcher(graphQLParams) {
+      var csrf = document.getElementsByName('_csrf')[0].content;
+      var token = document.getElementsByName('token')[0].content;
       return fetch('/graphql', {
         method: 'post',
         body: JSON.stringify(graphQLParams),
         headers: {
+          'X-CSRF-TOKEN': csrf,
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
+          'Accept': 'application/json',
+          'Authorization': 'Bearer ' + token
         },
-        credentials: 'include',
+        credentials: 'same-origin',
       }).then(function (response) {
         return response.json()
       });
