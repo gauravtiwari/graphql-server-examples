@@ -14,7 +14,7 @@ If you would like to add one of your own, just open a PR.
 ### Elixir (with token auth)
 * Phoenix
 
-### PHP
+### PHP (with token auth)
 * Laravel
 * ... More coming
 

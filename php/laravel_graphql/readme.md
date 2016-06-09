@@ -12,6 +12,11 @@ php artisan serve
 ```
 [Visit browser](http://localhost:8000/)
 
+# Features
+* Graphql API
+* CSRF and SESSION
+* TOKEN AUTH
+
 ### Supported API queries
 
 ```
