@@ -9,7 +9,7 @@ If you would like to add one of your own, just open a PR.
 ### Node
 * Express
 * Koa
-* ... More coming
+* Meteor
 
 ### Elixir (with token auth)
 * Phoenix
