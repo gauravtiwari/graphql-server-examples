@@ -28,7 +28,7 @@ type Comment {
 }
 
 type Query {
-  post(id: Int!): Post
+  post(id: String!): Post
   allPosts: [Post]
 }
 

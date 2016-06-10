@@ -18,15 +18,15 @@ meteor
 ```
 {
   allPosts {
-    id,
+    _id,
     title
     body
     user {
-      id
+      _id
       first_name
     }
     comments{
-      id
+      _id
       body
     }
 
@@ -36,16 +36,16 @@ meteor
 
 ```
 {
-  post(id: 1) {
-    id,
+  post(id: "qEsSyu5wHec6e67AW") {
+    _id,
     title
     body
     user {
-      id
+      _id
       first_name
     }
     comments{
-      id
+      _id
       body
     }
 
