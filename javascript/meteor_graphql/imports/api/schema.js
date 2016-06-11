@@ -60,11 +60,11 @@ export const resolvers = {
 
   Comment: {
     user(comment) {
-      return Users.findOne({ _id: comment.user }).fetch();
+      return Users.findOne({ _id: comment.user });
     },
 
     post(comment) {
-      return Posts.findOne({ _id: comment.post }).fetch();
+      return Posts.findOne({ _id: comment.post });
     },
   },
 }

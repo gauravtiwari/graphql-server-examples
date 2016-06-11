@@ -52,3 +52,26 @@ meteor
   }
 }
 ```
+
+### Field aliases
+
+```
+{
+  posts: allPosts {
+    _id
+    body
+    comments {
+      _id
+      body
+      user {
+        first_name
+        last_name
+      }
+    }
+    user {
+      first_name
+      last_name
+    }
+  }
+}
+```
