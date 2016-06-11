@@ -1,5 +1,7 @@
 # Flask Graphql
 
+Make sure `Python >= 3.5` and `pip` is installed on your machine.
+
 ```bash
 git clone repo
 cd folder
