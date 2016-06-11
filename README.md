@@ -6,8 +6,9 @@ If you would like to add one of your own, just open a PR.
 
 For setting up and running these examples locally, please refer to documentation in that folder. For ex: [README.md](https://github.com/gauravtiwari/graphql-server-examples/blob/master/elixir/phoenix_graphql/README.md)
 
-
 ## Example implementations
+
+Please refer to individual example folders in order to setup and run it locally. All supported GraphQL queries are listed in relevant Readme's.
 
 ### Node (without token auth)
 * Express
