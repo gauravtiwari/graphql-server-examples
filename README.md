@@ -4,9 +4,11 @@ This repo is work in progress and contains various examples of GraphQL server in
 
 If you would like to add one of your own, just open a PR.
 
+For setting up and running these examples locally, please refer to documentation in that folder. For ex: [README.md](https://github.com/gauravtiwari/graphql-server-examples/blob/master/elixir/phoenix_graphql/README.md)
+
 ## Multiple GraphQL Server API Examples
 
-### Node
+### Node (without token auth)
 * Express
 * Koa
 * Meteor
@@ -18,10 +20,10 @@ If you would like to add one of your own, just open a PR.
 * Laravel
 * ... More coming
 
-### Scala
-* Play (WIP)
+### Scala (WIP)
+* Play
 
-### Python
+### Python (without token auth)
 * Django
 * Flask
 * ... More coming
