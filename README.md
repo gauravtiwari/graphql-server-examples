@@ -8,7 +8,7 @@ For setting up and running these examples locally, please refer to documentation
 
 ## Example implementations
 
-Please refer to individual example folders in order to setup and run it locally. All supported GraphQL queries are listed in relevant Readme's.
+Please refer to relevant example folder in order to setup and run it locally. All supported GraphQL queries are listed in relevant Readme's.
 
 ### Node (without token auth)
 * Express
