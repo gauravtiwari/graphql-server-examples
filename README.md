@@ -1,12 +1,13 @@
 # WIP: Various GraphQL Server API Examples
 
-This repo is work in progress and contains various examples of GraphQL server in popular web frameworks and languages.
+This repo is work in progress and contains various examples of GraphQL server in popular web frameworks and languages. It implements standard blog application with three models or database tables - `Users, Posts, and Comments`, the blog application serves a nice example with model relationships and eager loading of data.
 
 If you would like to add one of your own, just open a PR.
 
 For setting up and running these examples locally, please refer to documentation in that folder. For ex: [README.md](https://github.com/gauravtiwari/graphql-server-examples/blob/master/elixir/phoenix_graphql/README.md)
 
-## Multiple GraphQL Server API Examples
+
+## Example implementations
 
 ### Node (without token auth)
 * Express
