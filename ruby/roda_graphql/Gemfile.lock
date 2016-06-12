@@ -3,7 +3,7 @@ GEM
   specs:
     colorize (0.7.7)
     dotenv (2.1.1)
-    graphql (0.14.0)
+    graphql (0.15.0)
     jwt (1.5.4)
     pg (0.18.4)
     puma (3.4.0)
@@ -13,7 +13,7 @@ GEM
       rack (>= 1.6.0)
     rack-protection (1.5.3)
       rack
-    rake (11.2.0)
+    rake (11.2.2)
     roda (2.14.0)
       rack
     sequel (4.35.0)
