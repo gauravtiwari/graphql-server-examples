@@ -1,6 +1,6 @@
 # WIP: Various GraphQL Server API Examples
 
-This repo is work in progress and contains various examples of GraphQL server in popular web frameworks and languages. It implements standard blog application with three models or database tables - `Users, Posts, and Comments`, the blog application serves a nice example with model relationships and eager loading of data.
+This repo is work in progress and contains various examples of GraphQL server in popular web frameworks and languages. It implements standard blog application with three models or database tables - `Users, Posts, and Comments`, the blog application serves a nice example with model relationships and nested loading of data.
 
 If you would like to add one of your own, just open a PR.
 
@@ -20,7 +20,6 @@ Please refer to relevant example folder in order to setup and run it locally. Al
 
 ### PHP (with token auth)
 * Laravel
-* ... More coming
 
 ### Scala (WIP)
 * Play
@@ -28,7 +27,6 @@ Please refer to relevant example folder in order to setup and run it locally. Al
 ### Python (without token auth)
 * Django
 * Flask
-* ... More coming
 
 ### Ruby (with token auth)
 * Sinatra
