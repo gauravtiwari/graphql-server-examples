@@ -1,8 +1,10 @@
 require_relative 'types/post_type'
+require_relative 'node_identification'
 
 QueryType = GraphQL::ObjectType.define do
   name "Query"
   description "The query root of this schema"
+  field :node, field: NodeIdentification.field
 
   field :post do
     type PostType
@@ -16,4 +18,8 @@ QueryType = GraphQL::ObjectType.define do
   end
 end
 
-Schema = GraphQL::Schema.new(query: QueryType)
+Schema = GraphQL::Schema.new(
+  query: QueryType
+)
+
+Schema.node_identification = NodeIdentification
