@@ -1,7 +1,7 @@
 source 'https://rubygems.org/'
 
 # App Stack
-gem 'sinatra', '~> 1.4'
+gem 'sinatra', '>= 1.4'
 
 # Database Stack
 gem 'sequel'
