@@ -75,12 +75,10 @@
         return response.json()
       });
     }
-    var defaultQuery = "<%= GraphiQL::Rails.config.initial_query.gsub(/\n/, "\\n") %>";
     // Render <GraphiQL /> into the body.
     ReactDOM.render(
       React.createElement(GraphiQL, {
         fetcher: graphQLFetcher,
-        defaultQuery: defaultQuery,
         <% if GraphiQL::Rails.config.query_params %>
         query: parameters.query,
         variables: parameters.variables,
